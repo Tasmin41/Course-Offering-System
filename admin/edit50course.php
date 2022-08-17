@@ -1,4 +1,11 @@
-
+<?php
+   include 'config.php';
+   $id = $_GET['id'];
+   //echo $id;
+   $dataFetchQuery = "SELECT * FROM `syllabus` WHERE id = '$id'";
+   $record = mysqli_query($conn,$dataFetchQuery);
+   $data = mysqli_fetch_array($record);
+   ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,26 +21,9 @@
     <link rel="stylesheet" href="assets/css/magnific.css">
     <!--owl-carosol-->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/data-table.css">
 
     <link rel="stylesheet" href="assets/css/main.css">
     
-    <style>
-        p#val {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px 20px 0 0;
-    color: #1B548D;
-}
-table {
-    caption-side: bottom;
-    border-collapse: collapse;
-    margin-top: 50px;
-    max-width: 94%;
-    margin: 0 auto;
-    margin-top: 30px;
-}
-    </style>
 </head>
 <body>
     <section class="header-area">
@@ -117,65 +107,53 @@ table {
                      </ul>
                 </div>
                 <div class="body col-xl-9 p0">
-                    <h2>Add New Course</h2>
-                    <?php include 'assets/class/courseDatabase.php';?>
-                    <table class="data display datatable nowrap order-column" id="example" style="width: 100%;">
-					<thead>
-						<tr>
-							<th>Serial</th>
-							<th>Course Code</th>
-							<th>Course Title</th>
-							<th>Credit</th>
-							<th>Prerequisite</th>						
-							<th>Action</th>			
-						</tr>
-					</thead>
-					<!-- delete start-->
-					<?php 
-					  $db = new courseDatabase();
-					   if(isset($_GET['delid'])){
-						    $delid = $_GET['delid'];
-							$delquery="delete from first_semester where id= $delid";
-							$delete= $db->courseDelete($delquery) ;
-							if($delete){
-								 echo "<span class='success'>Data deleted Successfully.
-				               </span>";
-							}else{
-								echo "not delete";
-							}
-					   }	
-					
-					?>
-					<!-- Select course start-->
-                	  <?php
-                        	$db=new courseDatabase(); 
-                            $query="SELECT * FROM first_semester ORDER BY ID DESC";
-                             $courseread=$db->courseSelect($query);
-                             if($courseread){
-                                 $i=0;
-                                 while($Courseresult=$courseread->fetch_assoc()){
-                                 $i++;		
-				          ?> 
-                   
-                   
-                        			 				 
-						<tr class="odd gradeX" >
-							<td><?php echo $i;?></td>
-							<td><?php echo $Courseresult['course_code'] ;?></td>
-							<td><?php echo $Courseresult['course_title'];?></td>
-							<td><?php echo $Courseresult['credit'];?></td>
-							<td><?php echo $Courseresult['prerequisite'];?></td>					
-							<td><a href="editcourse.php?editCourseid=<?php echo $Courseresult['id'] ;?>">Edit</a> || <a onclick="return confirm('are you sure to delete')" href="?delid=<?php echo $Courseresult['id'] ;?>">Delete</a></td>
-						</tr>
-							   <?php }}?>
-   
-	
-					 
-					</tbody>		
-					</table>
+                    <h2>Edit Course</h2>
+
+            <!--update course php start -->
+			<?php
+              include 'config.php';
+			    if(isset($_POST['submit'])){
+                    $id = $_POST['id'];
+				    $courseCode=$_POST['course_code'];
+                    $courseTitle=$_POST['course_title'];
+                    $credit=$_POST['credit'];
+                    $offered=$_POST['offer'];
+                    $semester=$_POST['semester'];
+                    // $updateQuery = "UPDATE `teacher` SET `image`='$image_des',`name`='$name',`designation`='$designation',`email`='$email',`phone`='$phone' WHERE id='$id'";
+                    $updateQuery ="UPDATE syllabus SET `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`offer`= '$offered',`semester`='$semester' WHERE id = '$id'";
+                    if(mysqli_query($conn,$updateQuery)){
+                        echo "<script>alert('Updated!!! !!')</script>";
+                        echo "<script>location.href='batch50_courseList.php'</script>";
+                     }else{
+                        echo "<script>alert('not Updated!!! !!')</script>";
+                     }	 
+				}
+			?>
+			<!--update course php end -->
+
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="mb-3 input">
+                    <label>course Code:</label><input type="text" value="<?php echo $data['course_code'] ;?>" name="course_code" />
+                </div>
+                <div class="mb-3 input">
+                <label>course Title:</label><input type="text" value="<?php echo $data['course_title'] ;?>" name="course_title" />
+                </div>
+                <div class="mb-3 input">
+                <label>Credit:</label><input type="text" value="<?php echo $data['credit'] ;?>" name="credit" /><br>
+                </div>
+                <div class="mb-3 input">
+                <label>Offered</label><input type="text" value="<?php echo $data['offer'] ;?>" name="offer"/>
+                </div>
+                <div class="mb-3 input">
+                <label>Semester</label><input type="text" value="<?php echo $data['semester'] ;?>" name="semester" />
+                </div>
+                <input type="hidden" name='id' value="<?php echo $data['id'] ?>">
+                <div class="mb-3 submit-btn">
+                <input type="submit" name="submit" Value="Save" />
+                </div>
+        
+            </form>
                </div>
-
-
             </div>
         </div>
     </section>
@@ -184,18 +162,11 @@ table {
             <p>&copy;Copyright <span>TFT.</span>All Rights Reserved</p>
         </div>
     </footer>
-	<script type="text/javascript">
-        $(document).ready(function () {
-            setupLeftMenu();
-            $('.datatable').dataTable();
-			setSidebarHeight();
-        });
-    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/magnific.min.js"></script>
-	<script src="assets/js/dataTables.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
@@ -203,8 +174,5 @@ table {
 
 
 
-
-
-
-
+         
 

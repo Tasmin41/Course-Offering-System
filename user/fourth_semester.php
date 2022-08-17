@@ -101,12 +101,13 @@
         <div class="container">
             <div class="banner-content contnt2">
                 <h3 style="color: #C3D136;">welcome to our amazing University and the beautiful class!!</h3>
-                <h2>Fourth Semester</h2>
+                <h2>First Semester</h2>
             </div>
         </div>
     </section>
     <!--banner area ends-->
     <!--courses offer starts-->
+
     <section class="table">
         <div class="container">
             <h3 class="table-title">REQUIRED COURSES</h3>
@@ -117,75 +118,33 @@
                             <th>Course Code</th>
                             <th>Course Title</th>
                             <th>Credit</th>
-                            <th>Section</th>
-                            <th>Prerequisite</th>
+                            <th>Semester</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="c-code">CSE 111</td>
-                            <td>Introduction to Computing</td>
-                            <td>2</td>
-                            <td>A-D</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="c-code">CSE 112</td>
-                            <td>Introduction to Computing Sessional</td>
-                            <td>1.5</td>
-                            <td>A-D</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="c-code">CSE 113</td>
-                            <td>Discrete Mathematics</td>
-                            <td>3</td>
-                            <td>A-D</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="c-code">CSE 111</td>
-                            <td>Engineering Drawing</td>
-                            <td>1.5</td>
-                            <td>A-D</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="c-code">MAT 111</td>
-                            <td>Calculus and Differential
-                                Equations</td>
-                            <td>3</td>
-                            <td>A-D</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="c-code">GED 111</td>
-                            <td>Basic English</td>
-                            <td>3</td>
-                            <td>A-D</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="c-code">GED 215</td>
-                            <td>Bangladesh Studies: History,
+                    <?php
+                           include 'config.php';
+                           $allData = mysqli_query($conn,"SELECT * FROM `syllabus` WHERE semester = 4");
+                           while($row=mysqli_fetch_array($allData)){
+                            
+                            
+				          ?>
 
-                                Society and Culture</td>
-                            <td>3</td>
-                            <td>A-D</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Total</td>
-                            <td>Subtotal = 17</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+        
+                    <tr class="odd gradeX" >
+							<td><?php echo $row['course_code'] ;?></td>
+							<td><?php echo $row['course_title'];?></td>
+							<td><?php echo $row['credit'];?></td>
+                            <td><?php echo $row['semester'];?></td>					
+						</tr>
+                        <?php }?>
                     </tbody>
                 </table>
+                
             </div>
         </div>
     </section>
+
     <!--courses offer ends-->
     <footer class="footer-area">
         <div class="footer-top">

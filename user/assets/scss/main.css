@@ -733,7 +733,8 @@ input {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 30px 0 50px 0;
-  height: 100vhsa;
+  height: 100vh;
+  height: 100%;
 }
 
 .login-wrapper {
@@ -754,6 +755,15 @@ input {
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+@media (max-width: 767.98px) {
+  .login-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .login-left {
   background-position: center;
   background-size: cover;
@@ -767,6 +777,13 @@ input {
   -o-border-radius: 20px 0 0 20px;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .login-left {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 }
 
 .login-left::before {
@@ -796,6 +813,12 @@ input {
   color: #fff;
 }
 
+@media (max-width: 992px) {
+  .login-left p {
+    line-height: 1.8rem;
+  }
+}
+
 .login-left .content {
   position: absolute;
   z-index: 2;
@@ -814,6 +837,23 @@ input {
   -moz-border-radius: 0 20px 20px 0;
   -ms-border-radius: 0 20px 20px 0;
   -o-border-radius: 0 20px 20px 0;
+}
+
+@media (max-width: 992px) {
+  .login-form {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .login-form {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
 }
 
 .login-form h3 {
@@ -884,7 +924,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before, table
   background-size: cover;
   background-repeat: no-repeat;
   padding: 50px 0 100px 0;
-  height: 100vh;
+  height: 100%;
 }
 
 .form {
@@ -916,6 +956,12 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before, table
   font-weight: bold;
 }
 
+@media (max-width: 767.98px) {
+  .form-inner label {
+    margin-bottom: 10px;
+  }
+}
+
 .form-inner button, .form-inner a {
   background-color: #C3D136;
   color: #fff;
@@ -928,5 +974,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before, table
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 767.98px) {
+  .input-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=main.css.map */

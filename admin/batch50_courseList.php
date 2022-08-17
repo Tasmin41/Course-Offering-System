@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Batch 50 course List</title>
     <!-- font awesom -->
     <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
@@ -15,23 +15,23 @@
     <!--owl-carosol-->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="assets/css/data-table.css">
-
     <link rel="stylesheet" href="assets/css/main.css">
-    
     <style>
-        p#val {
+p#val {
+    color: #1B548D;
+    padding: 15px;
     display: flex;
     justify-content: flex-end;
-    padding: 20px 20px 0 0;
-    color: #1B548D;
+    font-weight: bold;
+    max-width: 218px;
+    border: 1px solid;
+    margin: 10px 20px 20px auto;
 }
 table {
     caption-side: bottom;
     border-collapse: collapse;
-    margin-top: 50px;
-    max-width: 94%;
+    max-width: 95%;
     margin: 0 auto;
-    margin-top: 30px;
 }
     </style>
 </head>
@@ -117,61 +117,46 @@ table {
                      </ul>
                 </div>
                 <div class="body col-xl-9 p0">
-                    <h2>Add New Course</h2>
-                    <?php include 'assets/class/courseDatabase.php';?>
-                    <table class="data display datatable nowrap order-column" id="example" style="width: 100%;">
-					<thead>
-						<tr>
+                    <h2>Batch 50 course List</h2>
+                    
+                    <table class="data display datatable nowrap order-column" id="example " style="width: 100%;">
+                    <p id="val"></p>
+                    <thead>
+                    <tr>
 							<th>Serial</th>
 							<th>Course Code</th>
 							<th>Course Title</th>
 							<th>Credit</th>
-							<th>Prerequisite</th>						
+							<th>Offered</th>	
+                            <th>Semester</th>					
 							<th>Action</th>			
 						</tr>
-					</thead>
-					<!-- delete start-->
-					<?php 
-					  $db = new courseDatabase();
-					   if(isset($_GET['delid'])){
-						    $delid = $_GET['delid'];
-							$delquery="delete from first_semester where id= $delid";
-							$delete= $db->courseDelete($delquery) ;
-							if($delete){
-								 echo "<span class='success'>Data deleted Successfully.
-				               </span>";
-							}else{
-								echo "not delete";
-							}
-					   }	
-					
-					?>
-					<!-- Select course start-->
-                	  <?php
-                        	$db=new courseDatabase(); 
-                            $query="SELECT * FROM first_semester ORDER BY ID DESC";
-                             $courseread=$db->courseSelect($query);
-                             if($courseread){
-                                 $i=0;
-                                 while($Courseresult=$courseread->fetch_assoc()){
-                                 $i++;		
+</thead>    			 				 
+                            <tbody>
+                            <?php
+                           include 'config.php';
+                           $allData = mysqli_query($conn,"SELECT * FROM `syllabus`");
+                           while($row=mysqli_fetch_array($allData)){
+                            
+                            
+
 				          ?> 
-                   
-                   
-                        			 				 
-						<tr class="odd gradeX" >
-							<td><?php echo $i;?></td>
-							<td><?php echo $Courseresult['course_code'] ;?></td>
-							<td><?php echo $Courseresult['course_title'];?></td>
-							<td><?php echo $Courseresult['credit'];?></td>
-							<td><?php echo $Courseresult['prerequisite'];?></td>					
-							<td><a href="editcourse.php?editCourseid=<?php echo $Courseresult['id'] ;?>">Edit</a> || <a onclick="return confirm('are you sure to delete')" href="?delid=<?php echo $Courseresult['id'] ;?>">Delete</a></td>
+                            <tr class="odd gradeX" >
+							<td><?php echo $row['id']?></td>
+							<td><?php echo $row['course_code'] ;?></td>
+							<td><?php echo $row['course_title'];?></td>
+							<td><?php echo $row['credit'];?></td>
+							<td><?php  echo $row['offer'];?></td>
+                            <td><?php echo $row['semester'];?></td>					
+							<td><a href="edit50course.php?id=<?php echo $row['id'] ;?>">Edit</a></td>
 						</tr>
-							   <?php }}?>
+                        <?php }?>
+                            </tbody>
+							   
    
 	
 					 
-					</tbody>		
+				
 					</table>
                </div>
 
@@ -185,17 +170,44 @@ table {
         </div>
     </footer>
 	<script type="text/javascript">
-        $(document).ready(function () {
-            setupLeftMenu();
-            $('.datatable').dataTable();
-			setSidebarHeight();
-        });
+var noOfrow = document.querySelector('table').rows.length;
+
+var sumVal=0;
+	sumVal =parseInt(sumVal); 
+
+	for(var i = 1; i <noOfrow; i++)
+	{
+		if(document.querySelector('table').rows[i].cells[4].innerHTML == ""){
+			continue;
+		}
+		else if(document.querySelector('table').rows[i].cells[4].innerHTML == "1" )
+        {
+			sumVal = sumVal + parseInt(document.querySelector('table').rows[i].cells[3].innerHTML);
+		}  
+        // var chek=document.querySelector('#offer');
+        // console.log(chek);
+    //     chek.onclick = () => {
+    //         var chek=document.querySelector('#offer');
+    //   chek.setAttribute('checked', 'checked');
+    //     };
+//         if (chek.checked == true){
+//     console.log("ok");
+//   } else {
+//     console.log("no");
+//   }
+        // console.log(document.querySelector('table').rows[i].cells[4].innerHTML);
+            
+        
+       
+	}
+	
+	document.getElementById("val").innerHTML = "Total Credits Offered = " + sumVal;
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/magnific.min.js"></script>
-	<script src="assets/js/dataTables.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

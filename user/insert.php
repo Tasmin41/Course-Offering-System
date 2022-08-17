@@ -20,10 +20,10 @@ include 'config.php';
         echo "<script>alert('LU email required')</script>";
         echo "<script>location.href='registration.php'</script>";
     }
-    else if(!preg_match($passPattern , $r_pass)){
-        echo "<script>alert('Invalid Pass')</script>";
-        echo "<script>location.href='registration.php'</script>";
-    }
+    // else if(!preg_match($passPattern , $r_pass)){
+    //     echo "<script>alert('Invalid Pass')</script>";
+    //     echo "<script>location.href='registration.php'</script>";
+    // }
     // else if(strlen($r_pass>8  strlen($r_pass) < 20)){
     //     echo "<script>alert('3-20 char username is allowed')</script>";
     // }

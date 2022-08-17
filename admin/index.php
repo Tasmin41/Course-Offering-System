@@ -90,6 +90,19 @@
                                         <li><a href="eightSemester_list.php">Course List</a> </li>
                                     </ul>
                                 </li>    
+                                <li><a class="submenuitem">Batch 50</a>
+                                    <ul class="submenuitem-child">
+                                        <!-- <li><a href="eightSemester_add.php">Add Course</a> </li> -->
+                                        <li><a href="batch50_courseList.php">Course List</a> </li>
+                                    </ul>
+                                </li> 
+                                <li><a class="submenuitem">Full Syllabus</a>
+                                    <ul class="submenuitem-child">
+                                        <li><a href="syllabus_oneAdd.php">Syllabus One</a> </li>
+                                        <li><a href="syllabus_twoAdd.php">Syllabus Two</a> </li>
+                                        <!-- <li><a href="course_list.php">Course List</a> </li> -->
+                                    </ul>
+                                </li> 
                              </ul>
                          </li> 
                         <li><a class="menuitem">Assign Course Teacher</a></li> 

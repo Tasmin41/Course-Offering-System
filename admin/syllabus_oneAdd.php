@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Syllabus One</title>
     <!-- font awesom -->
     <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
@@ -14,26 +14,9 @@
     <link rel="stylesheet" href="assets/css/magnific.css">
     <!--owl-carosol-->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/data-table.css">
 
     <link rel="stylesheet" href="assets/css/main.css">
     
-    <style>
-        p#val {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px 20px 0 0;
-    color: #1B548D;
-}
-table {
-    caption-side: bottom;
-    border-collapse: collapse;
-    margin-top: 50px;
-    max-width: 94%;
-    margin: 0 auto;
-    margin-top: 30px;
-}
-    </style>
 </head>
 <body>
     <section class="header-area">
@@ -117,65 +100,51 @@ table {
                      </ul>
                 </div>
                 <div class="body col-xl-9 p0">
-                    <h2>Add New Course</h2>
+                    <h2>Add New Courses</h2>
                     <?php include 'assets/class/courseDatabase.php';?>
-                    <table class="data display datatable nowrap order-column" id="example" style="width: 100%;">
-					<thead>
-						<tr>
-							<th>Serial</th>
-							<th>Course Code</th>
-							<th>Course Title</th>
-							<th>Credit</th>
-							<th>Prerequisite</th>						
-							<th>Action</th>			
-						</tr>
-					</thead>
-					<!-- delete start-->
-					<?php 
-					  $db = new courseDatabase();
-					   if(isset($_GET['delid'])){
-						    $delid = $_GET['delid'];
-							$delquery="delete from first_semester where id= $delid";
-							$delete= $db->courseDelete($delquery) ;
-							if($delete){
-								 echo "<span class='success'>Data deleted Successfully.
-				               </span>";
-							}else{
-								echo "not delete";
-							}
-					   }	
-					
-					?>
-					<!-- Select course start-->
-                	  <?php
-                        	$db=new courseDatabase(); 
-                            $query="SELECT * FROM first_semester ORDER BY ID DESC";
-                             $courseread=$db->courseSelect($query);
-                             if($courseread){
-                                 $i=0;
-                                 while($Courseresult=$courseread->fetch_assoc()){
-                                 $i++;		
-				          ?> 
-                   
-                   
-                        			 				 
-						<tr class="odd gradeX" >
-							<td><?php echo $i;?></td>
-							<td><?php echo $Courseresult['course_code'] ;?></td>
-							<td><?php echo $Courseresult['course_title'];?></td>
-							<td><?php echo $Courseresult['credit'];?></td>
-							<td><?php echo $Courseresult['prerequisite'];?></td>					
-							<td><a href="editcourse.php?editCourseid=<?php echo $Courseresult['id'] ;?>">Edit</a> || <a onclick="return confirm('are you sure to delete')" href="?delid=<?php echo $Courseresult['id'] ;?>">Delete</a></td>
-						</tr>
-							   <?php }}?>
-   
-	
-					 
-					</tbody>		
-					</table>
+                    <?php
+			        //  insert product
+                    $db=new courseDatabase();
+			        if(isset($_POST['submit'])){
+					$courseCode=$_POST['course_code'];
+					$courseTitle=$_POST['course_title'];
+					$credit=$_POST['credit'];
+					$offered=$_POST['offer']; 
+                    $semester=$_POST['semester']; 
+
+                    $query="INSERT INTO syllabus(course_code,course_title,credit,offer,semester) 
+                    VALUES('$courseCode','$courseTitle','$credit','$offered','$semester')";
+                    $inserted_course=$db->courseInsert($query);
+                    if($inserted_course){
+                    echo "course insert success!";
+                    }else{
+                    echo "course not inserted!";
+                }
+					  
+				  }
+			?>	
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="mb-3 input">
+                    <label>course Code:</label><input type="text" name="course_code" />
+                </div>
+                <div class="mb-3 input">
+                <label>course Title:</label><input type="text" name="course_title" />
+                </div>
+                <div class="mb-3 input">
+                <label>Credit:</label><input type="text" name="credit" /><br>
+                </div>
+                <div class="mb-3 input">
+                <label>Offered</label><input type="text" name="offer"/>
+                </div>
+                <div class="mb-3 input">
+                <label>Semester</label><input type="text" name="semester" />
+                </div>
+                <div class="mb-3 submit-btn">
+                <input type="submit" name="submit" Value="Save" />
+                </div>
+        
+            </form>
                </div>
-
-
             </div>
         </div>
     </section>
@@ -184,27 +153,11 @@ table {
             <p>&copy;Copyright <span>TFT.</span>All Rights Reserved</p>
         </div>
     </footer>
-	<script type="text/javascript">
-        $(document).ready(function () {
-            setupLeftMenu();
-            $('.datatable').dataTable();
-			setSidebarHeight();
-        });
-    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/magnific.min.js"></script>
-	<script src="assets/js/dataTables.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

@@ -1,3 +1,4 @@
+
 (function ($) {
 	var allfunction = {
 
@@ -15,23 +16,19 @@
           responsive: true,
           "paging": false,
           "info": false,
-                  "searching": false,				
+        	"searching": false,				
       });
       },
+
 		aosEnimation:() =>{
 			AOS.init({
 				once :true,	
 			});
 		},
-
-
-		
-
 		init: function () {
 
 			allfunction.elemntCatSLider();
 			allfunction.dataTable();
-
 		},
 	}
 	$(document).ready(function () {
@@ -39,3 +36,4 @@
 	});
 })(jQuery);
 
+    

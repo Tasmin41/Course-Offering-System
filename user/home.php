@@ -88,7 +88,7 @@
                                         <li><a href="first_semester.php">First Semester</a></li>
                                         <li><a href="second_semester.php">Second Semester</a></li>
                                         <li><a href="third_semester.php">Third Semester</a></li>
-                                        <li><a href="#">Fourth Semester</a></li>
+                                        <li><a href="fourth_semester.php">Fourth Semester</a></li>
                                         <li><a href="#">Fifth Semester</a></li>
                                         <li><a href="#">Six Semester</a></li>
                                         <li><a href="#">Seven Semester</a></li>
