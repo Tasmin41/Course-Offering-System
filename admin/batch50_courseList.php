@@ -152,10 +152,7 @@ table {
 						</tr>
                         <?php }?>
                             </tbody>
-							   
-   
-	
-					 
+							    
 				
 					</table>
                </div>
@@ -183,20 +180,7 @@ var sumVal=0;
 		else if(document.querySelector('table').rows[i].cells[4].innerHTML == "1" )
         {
 			sumVal = sumVal + parseInt(document.querySelector('table').rows[i].cells[3].innerHTML);
-		}  
-        // var chek=document.querySelector('#offer');
-        // console.log(chek);
-    //     chek.onclick = () => {
-    //         var chek=document.querySelector('#offer');
-    //   chek.setAttribute('checked', 'checked');
-    //     };
-//         if (chek.checked == true){
-//     console.log("ok");
-//   } else {
-//     console.log("no");
-//   }
-        // console.log(document.querySelector('table').rows[i].cells[4].innerHTML);
-            
+		} 
         
        
 	}

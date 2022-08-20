@@ -16,6 +16,11 @@
     <!--data table css-->
     <link rel="stylesheet" href="assets/css/data-table.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .row{
+            justify-content: center !important;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -101,52 +106,48 @@
         <div class="container">
             <div class="banner-content contnt2">
                 <h3 style="color: #C3D136;">welcome to our amazing University and the beautiful class!!</h3>
-                <h2>First Semester</h2>
+                <h2>Batch 50</h2>
             </div>
         </div>
     </section>
     <!--banner area ends-->
     <!--courses offer starts-->
 
-    <section class="table">
+    <section class="table mb-50">
         <div class="container">
-            <h3 class="table-title">REQUIRED COURSES</h3>
-            <div class="cart-table">
+            <h3 class="table-title"> COURSES FOR FIRST SEMESTER</h3>
+            <div class="row">
+                <div class="col-xl-9">
+                <div class="cart-table">
                 <table id="example" class="display nowrap order-column" style="width: 100%;">
                     <thead>
                         <tr>
                             <th>Course Code</th>
                             <th>Course Title</th>
                             <th>Credit</th>
-                            <th>Section</th>
-                            <th>Prerequisite</th>
+                            <th>Semester</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-    include 'config.php';
-    include 'assets/class/database.php';
-
-    $db=new Database();
-
-        $query="SELECT * FROM first_semester ORDER BY ID DESC limit 8";
-         $course=$db->courseSelect($query);
-        if($course){    
-        while($courseresult=$course->fetch_assoc()){
-
-        ?>
-                        <tr>
-                            <td class="c-code"><?php echo $courseresult['course_code'];?></td>
-                            <td><?php echo $courseresult['course_title'];?></td>
-                            <td><?php echo $courseresult['credit'];?></td>
-                            <td>A-D</td>
-                            <td><?php echo $courseresult['prerequisite'];?></td>
-                        </tr>
-                        <?php }} ?>
+                           include 'config.php';
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 1");
+                           while($row=mysqli_fetch_array($allData)){   
+				          ?>
+                    <tr class="odd gradeX" >
+							<td><?php echo $row['course_code'] ;?></td>
+							<td><?php echo $row['course_title'];?></td>
+							<td><?php echo $row['credit'];?></td>
+                            <td><?php echo $row['semester'];?></td>					
+						</tr>
+                        <?php }?>
                     </tbody>
                 </table>
                 
             </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

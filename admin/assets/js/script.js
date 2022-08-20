@@ -13,7 +13,7 @@
 		},
 		dataTable : () =>{
             $('#example').DataTable({
-          responsive: true,
+          responsive: false,
           "paging": false,
           "info": false,
         	"searching": false,				

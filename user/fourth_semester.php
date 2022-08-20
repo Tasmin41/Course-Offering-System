@@ -20,11 +20,9 @@
 <body>
     <?php
             session_start();
-
             if(isset($_SESSION['email'])){
                 // echo "<script>location.href='first_semester.php'</script>";
-                // echo "hello";
-        
+                // echo "hello";  
             }
             else{
                 echo "<script>alert('Invalid user')</script>";
@@ -124,13 +122,9 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `syllabus` WHERE semester = 4");
-                           while($row=mysqli_fetch_array($allData)){
-                            
-                            
+                           $allData = mysqli_query($conn,"SELECT * FROM `syllabus_2` WHERE semester = 4");
+                           while($row=mysqli_fetch_array($allData)){   
 				          ?>
-
-        
                     <tr class="odd gradeX" >
 							<td><?php echo $row['course_code'] ;?></td>
 							<td><?php echo $row['course_title'];?></td>

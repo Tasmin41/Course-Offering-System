@@ -147,38 +147,40 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
                      </ul>
                 </div>
                 <div class="body col-xl-9 p0">
-                    <h2>Batch 50 course List</h2>     
+                    <h2>Batch 50 course List</h2>   
                     <table id="example" class="display nowrap order-column">
-                    <p id="val"></p>
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Course Code</th>
-                    <th>Course Title</th>
-                    <th>credit</th>
-                    <th>Offered</th>
-                    <th>Semester</th>
-                    <th>Action</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Email</th>
+                    <th>Phpne</th>
+                    <th>Batch</th>
+                    <th>Section</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $connect = mysqli_connect("localhost", "root", "", "finalyear_project");
-                    $query = "SELECT * FROM syllabus_2";
-                    $result = mysqli_query($connect, $query);
-                    while($row = mysqli_fetch_array($result)){
-                        echo '
-                            <tr>
-                                <td>'.$row["id"].'</td>
-                                <td>'.$row["course_code"].'</td>
-                                <td>'.$row["course_title"].'</td>
-                                <td>'.$row["credit"].'</td>
-                                <td>'.$row["offer"].'</td>
-                                <td>'.$row["semester"].'</td>					
-                                <td><a href="editCourse.php?id='. $row['id'].'">Edit</a></td>
-                            </tr>';
-                        }
-                        ?>
+            <?php
+                           include 'config.php';
+                           $allData = mysqli_query($conn,"SELECT * FROM `advisor`");
+                           while($row=mysqli_fetch_array($allData)){
+                               echo "<tr>
+                                   <td><img src='$row[image]' alt='Image' width='100px'height='100px'></td>
+                                   
+                                   <td>$row[name]</td>
+                                   <td>$row[designation]</td>
+                                   <td>$row[email]</td>
+                                   <td>$row[phone]</td>
+                                   <td>$row[batch]</td>
+                                   <td>$row[section]</td>
+                                   <td><a class='btn btn-dark' href='advisorUpdate.php?id=$row[id]'>Update</a></td>
+                                   <td><a class='btn btn-dark' href='advisorDelete.php?id=$row[id]'>Delete</a></td>
+                               </tr>";     
+                           }
+                           ?>
             </tbody>
         </table>
                </div>

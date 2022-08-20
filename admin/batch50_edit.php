@@ -2,7 +2,7 @@
    include 'config.php';
    $id = $_GET['id'];
    //echo $id;
-   $dataFetchQuery = "SELECT * FROM `syllabus_2` WHERE id = '$id'";
+   $dataFetchQuery = "SELECT * FROM `batch_50` WHERE id = '$id'";
    $record = mysqli_query($conn,$dataFetchQuery);
    $data = mysqli_fetch_array($record);
    ?>
@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Batch 50 edit course</title>
     <!-- font awesom -->
     <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
@@ -120,12 +120,12 @@
                     $offered=$_POST['offer'];
                     $semester=$_POST['semester'];
                     // $updateQuery = "UPDATE `teacher` SET `image`='$image_des',`name`='$name',`designation`='$designation',`email`='$email',`phone`='$phone' WHERE id='$id'";
-                    $updateQuery ="UPDATE syllabus_2 SET `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`offer`= '$offered',`semester`='$semester' WHERE id = '$id'";
+                    $updateQuery ="UPDATE batch_50 SET `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`offer`= '$offered',`semester`='$semester' WHERE id = '$id'";
                     if(mysqli_query($conn,$updateQuery)){
-                        echo "<script>alert('Updated!!! !!')</script>";
-                        echo "<script>location.href='course_list.php'</script>";
+                        echo "<script>alert('Course Updated!!! !!')</script>";
+                        echo "<script>location.href='batch50_list.php'</script>";
                      }else{
-                        echo "<script>alert('not Updated!!! !!')</script>";
+                        echo "<script>alert('Course not Updated!!! !!')</script>";
                      }	 
 				}
 			?>

@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Advisor Add</title>
     <!-- font awesom -->
     <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
@@ -113,16 +113,49 @@
                         <li><a class="menuitem">Assign Course Teacher</a></li> 
                         <li><a class="menuitem">Previous Question</a></li> 
                         <li><a class="menuitem">Notes</a></li>
-                        <li><a class="menuitem">Advisor</a>
-                            <ul class="submenu">
-                                <li><a class="submenuitem" href="advisor_add.php">Add Advisor</a></li>
-                                <li><a class="submenuitem" href="advisor_list.php">Advisor List</a></li>
-                            </ul>
+                        <li><a class="submenuitem">Advisor</a>
+                                    <ul class="submenuitem-child">
+                                        <li><a href="advisor_add.php">Add Advisor/a> </li>
+                                        <li><a href="advisor_list.php">Advisor List</a> </li>
+                                    </ul>
                         </li>
                      </ul>
                 </div>
                 <div class="body col-xl-9 p0">
                     <h2>Hello Admin</h2>
+                    <form action="advisorInsert.php" method="POST" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label>Advisor Image</label>
+                                    <input type="file" name="image" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Advisor Name</label>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Designation</label>
+                                    <input type="text" name="designation" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Email</label>
+                                    <input type="email" name="email" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Faculty Phone</label>
+                                    <input type="text" name="phone" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Batch</label>
+                                    <input type="text" name="batch" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Section</label>
+                                    <input type="text" name="section" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" name="save_student" class="btn btn-dark">Add Member</button>
+                                </div>
+                            </form>
                </div>
             </div>
         </div>

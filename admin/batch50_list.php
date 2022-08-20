@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course List</title>
+    <title>Batch 50 Course List</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
 
@@ -164,7 +164,7 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
             <tbody>
                 <?php
                 $connect = mysqli_connect("localhost", "root", "", "finalyear_project");
-                    $query = "SELECT * FROM syllabus_2";
+                    $query = "SELECT * FROM batch_50";
                     $result = mysqli_query($connect, $query);
                     while($row = mysqli_fetch_array($result)){
                         echo '
@@ -175,7 +175,7 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
                                 <td>'.$row["credit"].'</td>
                                 <td>'.$row["offer"].'</td>
                                 <td>'.$row["semester"].'</td>					
-                                <td><a href="editCourse.php?id='. $row['id'].'">Edit</a></td>
+                                <td><a href="batch50_edit.php?id='. $row['id'].'">Edit</a></td>
                             </tr>';
                         }
                         ?>
