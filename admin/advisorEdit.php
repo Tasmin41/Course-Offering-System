@@ -2,9 +2,10 @@
    include 'config.php';
    $id = $_GET['id'];
    //echo $id;
-   $dataFetchQuery = "SELECT * FROM `batch_50` WHERE id = '$id'";
+   $dataFetchQuery = "SELECT * FROM `advisor` WHERE id = '$id'";
    $record = mysqli_query($conn,$dataFetchQuery);
    $data = mysqli_fetch_array($record);
+//    echo $data['image'] ;
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batch 50 edit course</title>
+    <title>Advisor edit </title>
     <!-- font awesom -->
     <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
@@ -132,47 +133,29 @@
                 <div class="body col-xl-9 p0">
                     <h2>Edit Course</h2>
 
-            <!--update course php start -->
-			<?php
-              include 'config.php';
-			    if(isset($_POST['submit'])){
-                    $id = $_POST['id'];
-				    $courseCode=$_POST['course_code'];
-                    $courseTitle=$_POST['course_title'];
-                    $credit=$_POST['credit'];
-                    $offered=$_POST['offer'];
-                    $semester=$_POST['semester'];
-                    // $updateQuery = "UPDATE `teacher` SET `image`='$image_des',`name`='$name',`designation`='$designation',`email`='$email',`phone`='$phone' WHERE id='$id'";
-                    $updateQuery ="UPDATE batch_50 SET `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`offer`= '$offered',`semester`='$semester' WHERE id = '$id'";
-                    if(mysqli_query($conn,$updateQuery)){
-                        echo "<script>alert('Course Updated!!! !!')</script>";
-                        echo "<script>location.href='batch50_list.php'</script>";
-                     }else{
-                        echo "<script>alert('Course not Updated!!! !!')</script>";
-                     }	 
-				}
-			?>
-			<!--update course php end -->
-
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="advisorUpdateAction.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3 input">
-                    <label>course Code:</label><input type="text" value="<?php echo $data['course_code'] ;?>" name="course_code" />
+                <label>Advisor Name:</label><input type="text" value="<?php echo $data['name'] ;?>" name="name" />
                 </div>
                 <div class="mb-3 input">
-                <label>course Title:</label><input type="text" value="<?php echo $data['course_title'] ;?>" name="course_title" />
+                <label>Designation</label><input type="text" value="<?php echo $data['designation'] ;?>" name="designation" /><br>
                 </div>
                 <div class="mb-3 input">
-                <label>Credit:</label><input type="text" value="<?php echo $data['credit'] ;?>" name="credit" /><br>
+                <label>Email</label><input type="email" value="<?php echo $data['email'] ;?>" name="email"/>
                 </div>
                 <div class="mb-3 input">
-                <label>Offered</label><input type="text" value="<?php echo $data['offer'] ;?>" name="offer"/>
+                <label>Phone</label><input type="text" value="<?php echo $data['phone'] ;?>" name="phone" />
                 </div>
                 <div class="mb-3 input">
-                <label>Semester</label><input type="text" value="<?php echo $data['semester'] ;?>" name="semester" />
+                <label>Batch</label><input type="text" value="<?php echo $data['batch'] ;?>" name="batch"/>
+                </div>
+                <div class="mb-3 input">
+                <label>Section</label><input type="text" value="<?php echo $data['section'] ;?>" name="section" />
                 </div>
                 <input type="hidden" name='id' value="<?php echo $data['id'] ?>">
-                <div class="mb-3 submit-btn">
-                <input type="submit" name="submit" Value="Save" />
+                <div class="mb-3">
+                <button type="submit" name="save_student" class="btn btn-dark">Update</button>
+           
                 </div>
         
             </form>

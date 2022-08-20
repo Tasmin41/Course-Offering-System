@@ -124,10 +124,10 @@
                 <div class="body col-xl-9 p0">
                     <h2>Hello Admin</h2>
                     <form action="advisorInsert.php" method="POST" enctype="multipart/form-data">
-                                <div class="mb-3">
+                                <!-- <div class="mb-3">
                                     <label>Advisor Image</label>
                                     <input type="file" name="image" class="form-control">
-                                </div>
+                                </div> -->
                                 <div class="mb-3">
                                     <label>Advisor Name</label>
                                     <input type="text" name="name" class="form-control">

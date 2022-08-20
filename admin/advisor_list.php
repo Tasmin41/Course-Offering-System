@@ -62,6 +62,15 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
     top: 50%;
     content: "";
 }
+body h2{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-primary{
+    background-color: #C3D136 !important;
+    color: #fff !important;
+    border: none;
+}
     </style>
 </head>
 <body>
@@ -70,7 +79,7 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
         <div class="container">
             <div class="header d-flex justify-content-between">
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo.png" alt=""></a> 
+                    <a href="index.php"><img src="assets/img/logo.png" alt="index.php"></a> 
                     <span><h2>Admin Panel</h2><a href="#">www.lus.ac.bd</a></span>
                 </div>
                 <div class="right">
@@ -86,7 +95,7 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
     <section class="body-area">
         <div class="container">
             <div class="body-wrapper row">
-                <div class="side-bar col-xl-3">
+                <!-- <div class="side-bar col-xl-3">
                     <ul class="section menu">
                         <li><a class="menuitem">Courses</a>
                              <ul class="submenu"> 
@@ -145,21 +154,21 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
                         <li><a class="menuitem">Notes</a></li>
                         <li><a class="menuitem">Advisor</a></li>
                      </ul>
-                </div>
-                <div class="body col-xl-9 p0">
-                    <h2>Batch 50 course List</h2>   
+                </div> -->
+                <div class="body col-xl-10 p0">
+                    <h2>Advisor List <a href="index.php"><i class="fa-solid fa-angles-left"></i></a></h2>   
                     <table id="example" class="display nowrap order-column">
             <thead>
                 <tr>
-                    <th>Image</th>
                     <th>Name</th>
                     <th>Designation</th>
                     <th>Email</th>
-                    <th>Phpne</th>
+                    <th>Phone</th>
                     <th>Batch</th>
                     <th>Section</th>
                     <th>Update</th>
                     <th>Delete</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -167,17 +176,15 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
                            include 'config.php';
                            $allData = mysqli_query($conn,"SELECT * FROM `advisor`");
                            while($row=mysqli_fetch_array($allData)){
-                               echo "<tr>
-                                   <td><img src='$row[image]' alt='Image' width='100px'height='100px'></td>
-                                   
+                               echo "<tr>    
                                    <td>$row[name]</td>
                                    <td>$row[designation]</td>
                                    <td>$row[email]</td>
                                    <td>$row[phone]</td>
                                    <td>$row[batch]</td>
                                    <td>$row[section]</td>
-                                   <td><a class='btn btn-dark' href='advisorUpdate.php?id=$row[id]'>Update</a></td>
-                                   <td><a class='btn btn-dark' href='advisorDelete.php?id=$row[id]'>Delete</a></td>
+                                   <td><a class='btn btn-primary' href='advisorEdit.php?id=$row[id]'>Update</a></td>
+                                   <td><a class='btn btn-primary' href='advisorDelete.php?id=$row[id]'>Delete</a></td>
                                </tr>";     
                            }
                            ?>
@@ -194,67 +201,6 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
             <p>&copy;Copyright <span>TFT.</span>All Rights Reserved</p>
         </div>
     </footer>
-	<script type="text/javascript">
-var noOfrow = document.querySelector('table').rows.length;
-
-var sumVal=0;
-	sumVal =parseInt(sumVal); 
-
-	for(var i = 1; i <noOfrow; i++)
-	{
-		if(document.querySelector('table').rows[i].cells[4].innerHTML == ""){
-			continue;
-		}
-		else if(document.querySelector('table').rows[i].cells[4].innerHTML == "1" )
-        {
-			sumVal = sumVal + parseInt(document.querySelector('table').rows[i].cells[3].innerHTML);
-		} 
-        
-       
-	}
-	
-	document.getElementById("val").innerHTML = "Total Credits Offered = " + sumVal;
-    </script>
-    <!-- <div class="container">
-        <div class="col-xl-9">
-        <table id="example" class="display nowrap order-column" style="width: 100%;">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Course Code</th>
-                    <th>Course Title</th>
-                    <th>credit</th>
-                    <th>Offered</th>
-                    <th>Semester</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $connect = mysqli_connect("localhost", "root", "", "finalyear_project");
-                    $query = "SELECT * FROM syllabus_2";
-                    $result = mysqli_query($connect, $query);
-                    while($row = mysqli_fetch_array($result)){
-                        echo '
-                            <tr>
-                                <td>'.$row["id"].'</td>
-                                <td>'.$row["course_code"].'</td>
-                                <td>'.$row["course_title"].'</td>
-                                <td>'.$row["credit"].'</td>
-                                <td>'.$row["offer"].'</td>
-                                <td>'.$row["semester"].'</td>					
-                                <td><a href="editCourse.php?id='. $row['id'].'">Edit</a></td>
-                            </tr>';
-                        }
-                        ?>
-            </tbody>
-        </table>
-        </div>
-    </div> -->
-
-
-
-
     <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Semester</title>
+    <title>Batch 56</title>
     <!-- font awesom -->
     <link rel="stylesheet" href="assets/css/font-awesom/css/all.min.css">
     <!-- bootsrap -->
@@ -96,8 +96,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">Advisor</a></li>
-                            <li><a href="advisor.php">Contact</a></li>
+                            <li><a href="advisor.php">Advisor</a></li>
+                            <li><a href="#">Contact</a></li>
                             <li><a href="logout.php" class="btn logout">Logout</a></li>
                         </ul> 
                     </div>
@@ -110,7 +110,7 @@
         <div class="container">
             <div class="banner-content contnt2">
                 <h3 style="color: #C3D136;">welcome to our amazing University and the beautiful class!!</h3>
-                <h2>Batch 50</h2>
+                <h2>Batch 56</h2>
             </div>
         </div>
     </section>
@@ -135,7 +135,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 1");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 1");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >
@@ -171,7 +171,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 2");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 2");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >
@@ -207,7 +207,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 3");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 3");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >
@@ -243,7 +243,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 4");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 4");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >
@@ -279,7 +279,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 5");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 5");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >
@@ -315,7 +315,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 6");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 6");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >
@@ -351,7 +351,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 7");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 7");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >
@@ -387,7 +387,7 @@
                     <tbody>
                     <?php
                            include 'config.php';
-                           $allData = mysqli_query($conn,"SELECT * FROM `batch_50` WHERE semester = 8");
+                           $allData = mysqli_query($conn,"SELECT * FROM `batch_56` WHERE semester = 8");
                            while($row=mysqli_fetch_array($allData)){   
 				          ?>
                     <tr class="odd gradeX" >

@@ -2,7 +2,7 @@
    include 'config.php';
    $id = $_GET['id'];
    //echo $id;
-   $dataFetchQuery = "SELECT * FROM `batch_50` WHERE id = '$id'";
+   $dataFetchQuery = "SELECT * FROM `batch_60` WHERE id = '$id'";
    $record = mysqli_query($conn,$dataFetchQuery);
    $data = mysqli_fetch_array($record);
    ?>
@@ -143,10 +143,10 @@
                     $offered=$_POST['offer'];
                     $semester=$_POST['semester'];
                     // $updateQuery = "UPDATE `teacher` SET `image`='$image_des',`name`='$name',`designation`='$designation',`email`='$email',`phone`='$phone' WHERE id='$id'";
-                    $updateQuery ="UPDATE batch_50 SET `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`offer`= '$offered',`semester`='$semester' WHERE id = '$id'";
+                    $updateQuery ="UPDATE batch_60 SET `course_code`= '$courseCode',`course_title`= '$courseTitle',`credit`= '$credit',`offer`= '$offered',`semester`='$semester' WHERE id = '$id'";
                     if(mysqli_query($conn,$updateQuery)){
                         echo "<script>alert('Course Updated!!! !!')</script>";
-                        echo "<script>location.href='batch50_list.php'</script>";
+                        echo "<script>location.href='batch60_list.php'</script>";
                      }else{
                         echo "<script>alert('Course not Updated!!! !!')</script>";
                      }	 

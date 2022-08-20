@@ -41,12 +41,12 @@ if(isset($_POST["submit"]))
     $item4 = mysqli_real_escape_string($connect, $data[3]);
     $item5 = mysqli_real_escape_string($connect, $data[4]);  
     // $item6 = mysqli_real_escape_string($connect, $data[5]);
-    $query = "INSERT into batch_50(course_code, course_title,credit,offer,semester) values('$item1','$item2','$item3','$item4','$item5')";
+    $query = "INSERT into batch_55(course_code, course_title,credit,offer,semester) values('$item1','$item2','$item3','$item4','$item5')";
     mysqli_query($connect, $query);
    }
    fclose($handle);
-   echo "<script>alert('Import done');</script>";
-   echo "<script>location.href='batch50_list.php'</script>";
+//    echo "<script>alert('Import done');</script>";
+   echo "<script>location.href='batch55_list.php'</script>";
 
   }
  }
