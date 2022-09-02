@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
 </head>
 <body>   
 <div class="container">
-<h3 align="center">How to Import Data from CSV File to Mysql using PHP</h3><br />
+<h3 align="center">Import Syllabus from CSV File</h3><br />
 <?php  
 $connect = mysqli_connect("localhost", "root", "", "finalyear_project");
 if(isset($_POST["submit"]))

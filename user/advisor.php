@@ -23,30 +23,17 @@
     </style>
 </head>
 <body>
-    <?php
-            session_start();
-
-            if(isset($_SESSION['email'])){
-                // echo "<script>location.href='first_semester.php'</script>";
-                // echo "hello";
-        
-            }
-            else{
-                echo "<script>alert('Invalid user')</script>";
-                echo "<script>location.href='index.php'</script>";
-            }
-    ?>
     <!--Header area-->
     <header class="header-area">
         <div class="header-top">
             <div class="container">
                 <div class="header-wrap">
                     <ul class="list-left">
-                        <li><a href="#"><i class="fa-solid fa-envelope-open"></i> lus.ac.bd</a></li>
+                        <li><a href="https://www.lus.ac.bd/" target="_blank"><i class="fa-solid fa-envelope-open"></i> lus.ac.bd</a></li>
                         <li><a href="#"><i class="fa-solid fa-phone"></i> +1-3435-2356-222</a></li>
                     </ul>
                     <ul class="list-right">
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.facebook.com/leadinguniversity2001" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-skype"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
@@ -59,11 +46,11 @@
             <div class="container">
                 <div class="headBottom-wrap">
                     <div class="logo">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <img src="./image/logo.png" alt="logo">
                         <a href="#"><span>Leading</span> University</a>
                      </div>
                     <div class="navigation">
-                        <ul class="menu-main">
+                     <ul class="menu-main"> 
                             <li><a href="home.php">Home</a></li>
                             <li><a href="#">About</a></li>
                             <li class="menu-item-has-children">
@@ -81,21 +68,25 @@
                                 <a href="#">Courses <i class="fas fa-angle-down"></i></a>
                                 <div class="sub-menu single-column-menu">
                                     <ul>
-                                        <li><a href="first_semester.php">First Semester</a></li>
-                                        <li><a href="second_semester.php">Second Semester</a></li>
-                                        <li><a href="third_semester.php">Third Semester</a></li>
-                                        <li><a href="fourth_semester.php">Fourth Semester</a></li>
-                                        <li><a href="fifth_semester.php">Fifth Semester</a></li>
-                                        <li><a href="six_semester.php">Six Semester</a></li>
-                                        <li><a href="seven_semester.php">Seven Semester</a></li>
-                                        <li><a href="eight_semester.php">Eight Semester</a></li>
+                                        <li><a href="batch50.php">Batch 50</a></li>
+                                        <li><a href="batch51.php">Batch 51</a></li>
+                                        <li><a href="batch52.php">Batch 52</a></li>
+                                        <li><a href="batch53.php">Batch 53</a></li>
+                                        <li><a href="batch54.php">Batch 54</a></li>
+                                        <li><a href="batch55.php">Batch 55</a></li>
+                                        <li><a href="batch56.php">Batch 56</a></li>
+                                        <li><a href="batch57.php">Batch 57</a></li>
+                                        <li><a href="batch58.php">Batch 58</a></li>
+                                        <li><a href="batch59.php">Batch 59</a></li>
+                                        <li><a href="batch60.php">Batch 60</a></li>
+        
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">Notes</a></li>
+                            <li><a href="advisor.php">Advisor</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="logout.php" class="btn logout">Logout</a></li>
-                        </ul>
+                        </ul> 
                     </div>
                 </div>
             </div>

@@ -54,7 +54,7 @@ if(isset($_POST["submit"]))
 ?> 
   <form method="post" enctype="multipart/form-data">
    <div align="center">  
-    <label>Select CSV File:</label>
+   <h3 align="center">Import Syllabus from CSV File</h3><br />
     <input type="file" name="file" />
     <br />
     <input type="submit" name="submit" value="submit" class="btn btn-info" />

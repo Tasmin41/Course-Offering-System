@@ -64,12 +64,26 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
 }
 body h2{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
+}
+label {
+	display: inline-block;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.dataTables_wrapper .dataTables_paginate {
+	margin-bottom: 21px;
 }
 .btn-primary{
     background-color: #C3D136 !important;
     color: #fff !important;
     border: none;
+}
+.dataTables_wrapper .dataTables_filter {
+	float: right;
+	text-align: left;
+	padding-right: 20px;
+	margin-bottom: 10px;
 }
     </style>
 </head>

@@ -16,6 +16,13 @@
     <!--data table css-->
     <link rel="stylesheet" href="assets/css/data-table.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .login-area {
+
+    height: 100vh;
+
+}
+    </style>
 </head>
 <body>
 

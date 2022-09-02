@@ -113,11 +113,11 @@
                         <li><a class="menuitem">Assign Course Teacher</a></li> 
                         <li><a class="menuitem">Previous Question</a></li> 
                         <li><a class="menuitem">Notes</a></li>
-                        <li><a class="submenuitem">Advisor</a>
-                                    <ul class="submenuitem-child">
-                                        <li><a href="advisor_add.php">Add Advisor/a> </li>
-                                        <li><a href="advisor_list.php">Advisor List</a> </li>
-                                    </ul>
+                        <li><a class="menuitem">Advisor</a>
+                            <ul class="submenu">
+                                <li><a class="submenuitem" href="advisor_add.php">Add Advisor</a></li>
+                                <li><a class="submenuitem" href="advisor_list.php">Advisor List</a></li>
+                            </ul>
                         </li>
                      </ul>
                 </div>

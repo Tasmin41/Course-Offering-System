@@ -51,16 +51,36 @@ table {
     /* max-width: 95%; */
     margin: 0 auto;
 }
-table.dataTable.nowrap th, table.dataTable.nowrap td {
-    white-space: normal;
-}
+
+
 table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
     bottom: 50%;
     content: "";
+
 }
 table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
     top: 50%;
     content: "";
+}
+label {
+	display: inline-block;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.dataTables_wrapper .dataTables_paginate {
+	margin-bottom: 21px;
+}
+table.dataTable.nowrap th {
+	white-space: nowrap;
+}
+.body h2{
+    justify-content: center;
+}
+.dataTables_wrapper .dataTables_filter {
+	float: right;
+	text-align: left;
+	padding-right: 20px;
+	margin-bottom: 10px;
 }
     </style>
 </head>
@@ -70,7 +90,7 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
         <div class="container">
             <div class="header d-flex justify-content-between">
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo.png" alt=""></a> 
+                    <a href="home.php"><img src="assets/img/logo.png" alt=""></a> 
                     <span><h2>Admin Panel</h2><a href="#">www.lus.ac.bd</a></span>
                 </div>
                 <div class="right">
@@ -236,42 +256,6 @@ var sumVal=0;
 	
 	document.getElementById("val").innerHTML = "Total Credits Offered = " + sumVal;
     </script>
-    <!-- <div class="container">
-        <div class="col-xl-9">
-        <table id="example" class="display nowrap order-column" style="width: 100%;">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Course Code</th>
-                    <th>Course Title</th>
-                    <th>credit</th>
-                    <th>Offered</th>
-                    <th>Semester</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $connect = mysqli_connect("localhost", "root", "", "finalyear_project");
-                    $query = "SELECT * FROM syllabus_2";
-                    $result = mysqli_query($connect, $query);
-                    while($row = mysqli_fetch_array($result)){
-                        echo '
-                            <tr>
-                                <td>'.$row["id"].'</td>
-                                <td>'.$row["course_code"].'</td>
-                                <td>'.$row["course_title"].'</td>
-                                <td>'.$row["credit"].'</td>
-                                <td>'.$row["offer"].'</td>
-                                <td>'.$row["semester"].'</td>					
-                                <td><a href="editCourse.php?id='. $row['id'].'">Edit</a></td>
-                            </tr>';
-                        }
-                        ?>
-            </tbody>
-        </table>
-        </div>
-    </div> -->
 
 
 

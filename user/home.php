@@ -18,40 +18,18 @@
 
 </head>
 <body>
-    <!-- <?php
-    // $email ="admin@gmail.com";
-    // $password="123";
 
-    session_start();
-
-    if(isset($_SESSION['email'])){
-        echo "<a href='logout.php'></a>";
-
-    }
-    else{
-        echo "<script>alert('Invalid user')</script>";
-        echo "<script>location.href='index.php'</script>";
-    }
-    // else{
-    //     if($_POST['email'] == $email && $_POST['pass'] == $password){
-    //         $_SESSION['email'] = $email;
-    //         echo "<script>location.href='home.php'</script>";
-    
-    //     }
-       
-    // }
-    ?>  -->
     <!--Header area-->
     <header class="header-area">
         <div class="header-top">
             <div class="container">
                 <div class="header-wrap">
                     <ul class="list-left">
-                        <li><a href="#"><i class="fa-solid fa-envelope-open"></i> lus.ac.bd</a></li>
+                        <li><a href="https://www.lus.ac.bd/" target="_blank"><i class="fa-solid fa-envelope-open"></i> lus.ac.bd</a></li>
                         <li><a href="#"><i class="fa-solid fa-phone"></i> +1-3435-2356-222</a></li>
                     </ul>
                     <ul class="list-right">
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.facebook.com/leadinguniversity2001" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-skype"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
@@ -64,13 +42,12 @@
             <div class="container">
                 <div class="headBottom-wrap">
                     <div class="logo">
-                        <img src="assets/img/logo.png" alt="logo">
-                        <a href="#"><span>Leading</span> University</a>
+                        <img src="./image/logo.png" alt="logo">
+                        <a href="home.php"><span>Leading</span> University</a>
                      </div>
                     <div class="navigation">
- 
                      <ul class="menu-main"> 
-                            <li><a href="#">Home</a></li>
+                            <li><a href="home.php">Home</a></li>
                             <li><a href="#">About</a></li>
                             <li class="menu-item-has-children">
                                 <a href="#">Faculty Member <i class="fas fa-angle-down"></i></a>
@@ -235,13 +212,13 @@
                         <div class="footer-logo">
                             <a href="#">  <img src="assets/img/logo.png" alt="logo"></a>
                             <ul class="top">
-                                <li>Box 35300</li>
-                                <li>1810 Campus Way NE</li>
+                                <li>Leading University</li>
+                                <li>Ragibnagar, South Surma, Sylhet-3112</li>
                                 <li>Bothell, WA 98011-8246</li>
                             </ul>
                             <ul class="bottom">
-                                <li><a href="#">+1-2534-4456-345</a></li>
-                                <li><a href="#">admin@kingsteruni.edu</a></li>
+                                <li><a href="#">Phone: 01313084499.</a></li>
+                                <li><a href="#">Email: info@lus.ac.bd</a></li>
                             </ul>
                             <span class="line"></span>
                         </div>
@@ -300,7 +277,7 @@
                         </div>
                         <div class="col-xl-6">
                             <ul class="footer-icon">
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.facebook.com/leadinguniversity2001" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-skype"></i></a></li>
                                 <li><a href="#"><i class="fa-brands fa-telegram"></i></a></li>

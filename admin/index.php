@@ -1,4 +1,26 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    $r_username="admin";
+    $r_pass ="12345678";
+
+    session_start();
+    if(isset($_SESSION['l_username'])){
+
+    }else{ 
+        if(isset($_POST['login'])){
+            if($_POST['l_username']==$r_username && $_POST['l_pass']==$r_pass){
+                $_SESSION['l_username'] = $r_username;
+                echo "<script>location.href='index.php'</script>";
+            }else{
+                echo "<script>alert('Incorrect username or password')</script>";
+                echo "<script>location.href='login.php'</script>";
+            }
+        }else{
+            echo "<script>alert('DO NOT ACCESS FROM URL')</script>";
+            echo "<script>location.href='login.php'</script>";
+        }
+    }   
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +51,7 @@
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
                         <li><a href="#">Hello Admin | </a></li>
-                        <li><a href="#" style="color: #C3D136;;">Logout</a></li>
+                        <li><a href="logout.php" style="color: #C3D136;;">Logout</a></li>
                     </ul>
                 </div>
             </div>

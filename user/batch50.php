@@ -23,30 +23,17 @@
     </style>
 </head>
 <body>
-    <?php
-            session_start();
-
-            if(isset($_SESSION['email'])){
-                // echo "<script>location.href='first_semester.php'</script>";
-                // echo "hello";
-        
-            }
-            else{
-                echo "<script>alert('Invalid user')</script>";
-                echo "<script>location.href='index.php'</script>";
-            }
-    ?>
     <!--Header area-->
     <header class="header-area">
         <div class="header-top">
             <div class="container">
                 <div class="header-wrap">
                     <ul class="list-left">
-                        <li><a href="#"><i class="fa-solid fa-envelope-open"></i> lus.ac.bd</a></li>
+                        <li><a href="https://www.lus.ac.bd/" target="_blank"><i class="fa-solid fa-envelope-open"></i> lus.ac.bd</a></li>
                         <li><a href="#"><i class="fa-solid fa-phone"></i> +1-3435-2356-222</a></li>
                     </ul>
                     <ul class="list-right">
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.facebook.com/leadinguniversity2001" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-skype"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
@@ -59,12 +46,12 @@
             <div class="container">
                 <div class="headBottom-wrap">
                     <div class="logo">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <img src="./image/logo.png" alt="logo">
                         <a href="#"><span>Leading</span> University</a>
                      </div>
                     <div class="navigation">
                      <ul class="menu-main"> 
-                            <li><a href="#">Home</a></li>
+                            <li><a href="home.php">Home</a></li>
                             <li><a href="#">About</a></li>
                             <li class="menu-item-has-children">
                                 <a href="#">Faculty Member <i class="fas fa-angle-down"></i></a>
@@ -96,8 +83,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">Advisor</a></li>
-                            <li><a href="advisor.php">Contact</a></li>
+                            <li><a href="advisor.php">Advisor</a></li>
+                            <li><a href="#">Contact</a></li>
                             <li><a href="logout.php" class="btn logout">Logout</a></li>
                         </ul> 
                     </div>

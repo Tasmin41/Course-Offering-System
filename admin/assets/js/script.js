@@ -14,9 +14,9 @@
 		dataTable : () =>{
             $('#example').DataTable({
           responsive: false,
-          "paging": false,
+          "paging": true,
           "info": false,
-        	"searching": false,				
+        	"searching": true,				
       });
       },
 

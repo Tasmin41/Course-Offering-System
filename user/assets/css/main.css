@@ -125,6 +125,77 @@
   background-color: #C3D136 !important;
   color: #fff !important; }
 
+.burger {
+  position: relative;
+  display: none;
+  cursor: pointer;
+  width: 2rem;
+  height: 1rem;
+  border: none;
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  background: none;
+  transform: rotate(0deg);
+  transition: 0.35s ease-in-out; }
+  .burger-line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    border: none;
+    outline: none;
+    opacity: 1;
+    border-radius: 0.25rem;
+    background: #333;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out; }
+    .burger-line:nth-child(1) {
+      top: 0; }
+    .burger-line:nth-child(2), .burger-line:nth-child(3) {
+      top: 0.5rem; }
+    .burger-line:nth-child(4) {
+      top: 1rem; }
+  .burger.is-active .burger-line:nth-child(1), .burger.is-active .burger-line:nth-child(4) {
+    top: 1.25rem;
+    width: 0%;
+    left: 50%; }
+  .burger.is-active .burger-line:nth-child(2) {
+    transform: rotate(45deg); }
+  .burger.is-active .burger-line:nth-child(3) {
+    transform: rotate(-45deg); }
+
+@media only screen and (max-width: 1199px) {
+  .burger {
+    display: block;
+    opacity: 1;
+    visibility: visible; }
+
+  .menu {
+    max-height: 0rem;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    max-width: 300px;
+    width: 100%;
+    z-index: 3;
+    background-color: red;
+    color: #fff;
+    position: relative;
+    left: 0; }
+    .menu.is-active {
+      opacity: 1;
+      visibility: visible; }
+    .menu-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 0; } }
 .banner-wrapper {
   position: relative; }
 
@@ -408,6 +479,23 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 18.78px; }
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0px 15px; }
+  @media (max-width: 1399px) {
+    .container {
+      max-width: 1140px; } }
+  @media (max-width: 1199px) {
+    .container {
+      max-width: 960px; } }
+  @media (max-width: 992px) {
+    .container {
+      max-width: 720px; } }
+  @media (max-width: 767.98px) {
+    .container {
+      max-width: 100%; } }
 
 .rowt {
   display: flex;

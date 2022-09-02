@@ -7,23 +7,23 @@ body{
   line-height: 18.78px;
 }
 
-// .container {
-//   max-width: 1320px;
-//   margin: 0 auto;
-//   padding: 0px 15px;
-//   @include mq(xl) {
-//     max-width: 1140px;
-//   }
-//   @include mq(lg) {
-//     max-width: 960px;
-//   }
-//   @include mq(md) {
-//     max-width: 720px;
-//   }
-//   @include mq(xs) {
-//     max-width: 100%;
-//   }
-// }
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0px 15px;
+  @include mq(xl) {
+    max-width: 1140px;
+  }
+  @include mq(lg) {
+    max-width: 960px;
+  }
+  @include mq(md) {
+    max-width: 720px;
+  }
+  @include mq(xs) {
+    max-width: 100%;
+  }
+}
 .rowt {
   display: flex;
   flex-wrap: wrap;

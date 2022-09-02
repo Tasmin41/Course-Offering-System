@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .body h2{
+            justify-content: center;
+        }
+    </style>
     
 </head>
 <body>

@@ -51,9 +51,7 @@ table {
     /* max-width: 95%; */
     margin: 0 auto;
 }
-table.dataTable.nowrap th, table.dataTable.nowrap td {
-    white-space: normal;
-}
+
 table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
     bottom: 50%;
     content: "";
@@ -61,6 +59,26 @@ table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_
 table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
     top: 50%;
     content: "";
+}
+label {
+	display: inline-block;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.dataTables_wrapper .dataTables_paginate {
+	margin-bottom: 21px;
+}
+table.dataTable.nowrap th {
+	white-space: nowrap;
+}
+.body h2{
+    justify-content: center;
+}
+.dataTables_wrapper .dataTables_filter {
+	float: right;
+	text-align: left;
+	padding-right: 20px;
+	margin-bottom: 10px;
 }
     </style>
 </head>

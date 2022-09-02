@@ -7,7 +7,7 @@ include 'config.php';
     $r_mobile = $_POST['r_mobile'];
 
     $emailPattern = "/(cse|eee|law)_\d{10}@lus\.ac\.bd/";
-    $passPattern =  "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/" ;//"/((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&*£])){8-20}/"
+    // $passPattern =  "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/" ;
     $mobilePattern = "/(\+88)?-?01[3-9]\d{8}/";
     
 
@@ -20,13 +20,6 @@ include 'config.php';
         echo "<script>alert('LU email required')</script>";
         echo "<script>location.href='registration.php'</script>";
     }
-    // else if(!preg_match($passPattern , $r_pass)){
-    //     echo "<script>alert('Invalid Pass')</script>";
-    //     echo "<script>location.href='registration.php'</script>";
-    // }
-    // else if(strlen($r_pass>8  strlen($r_pass) < 20)){
-    //     echo "<script>alert('3-20 char username is allowed')</script>";
-    // }
     else if($r_pass!==$r_cpass){
         echo "<script>alert('Pass and confirm pass is not matching')</script>";
         echo "<script>location.href='registration.php'</script>";

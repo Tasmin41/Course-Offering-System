@@ -62,6 +62,26 @@ table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_a
     top: 50%;
     content: "";
 }
+label {
+	display: inline-block;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.dataTables_wrapper .dataTables_paginate {
+	margin-bottom: 21px;
+}
+table.dataTable.nowrap th {
+	white-space: nowrap;
+}
+.body h2{
+    justify-content: center;
+}
+.dataTables_wrapper .dataTables_filter {
+	float: right;
+	text-align: left;
+	padding-right: 20px;
+	margin-bottom: 10px;
+}
     </style>
 </head>
 <body>
